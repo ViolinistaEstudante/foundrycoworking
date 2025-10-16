@@ -1,0 +1,249 @@
+/* ===== PÁGINA DE PAGAMENTO ===== */
+:root {
+    --cor-primária: #014d34;
+    --cor-secundária: #2fa77a;
+    --cor-terciária: #0f2a24;
+    --branco: #ffffff;
+    --shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+    --fonte-principal: "AbeeZee", sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fonte-principal);
+}
+
+.pagamento {
+  background-color: var(--cor-terciária);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagamento-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-preview {
+  width: 340px;
+  height: 210px;
+  perspective: 1000px;
+  position: relative;
+}
+
+.card-front, .card-back {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #014d34, #2fa77a);
+  color: #fff;
+  position: absolute;
+  backface-visibility: hidden;
+  padding: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  transition: transform 0.6s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  background: linear-gradient(135deg, #013826, #1f6e4f);
+}
+
+.card-preview.flip .card-front {
+  transform: rotateY(180deg);
+}
+
+.card-preview.flip .card-back {
+  transform: rotateY(360deg);
+}
+
+.card-strip {
+  position: relative;
+  background: transparent;
+  height: 50px;
+  border-radius: 6px;
+  margin: 20px 0;
+}
+
+.card-logo-strip {
+  width: auto;
+  position: absolute;
+  right: -7px;
+  transform: translateY(-50%);
+  height: 55px;
+  filter: brightness(1.1);
+}
+
+
+.card-number {
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+}
+
+.card-holder, .card-expiration {
+  font-size: 0.9rem;
+}
+
+.card-holder {
+  text-transform: uppercase;
+}
+
+.magstripe {
+  width: 100%;
+  height: 40px;
+  background: #111;
+  margin-top: 20px;
+  border-radius: 4px;
+}
+
+.cvv-box {
+  text-align: right;
+  font-weight: bold;
+  margin-top: 20px;
+  font-size: 1rem;
+}
+
+.form-pagamento {
+  background-color: var(--cor-primária);
+  padding: 30px;
+  border-radius: 15px;
+  width: 340px;
+  box-shadow: var(--shadow-sm);
+}
+
+.form-pagamento label {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  color: var(--branco);}
+
+
+.form-pagamento h3 {
+  margin-bottom: 20px;
+  color: var(--branco);
+}
+
+.form-pagamento label {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+}
+
+.form-pagamento input {
+  width: 97%;
+  padding: 9px;
+  border: none;
+  border-radius: 7px;
+  margin-bottom: 10px;
+  font-family: var(--fonte-principal);
+}
+
+.linha {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.nota {
+  font-size: 0.8rem;
+  margin-top: 15px;
+  color: #c7c7c7;
+  text-align: center;
+}
+
+.btn-cartilhas {
+    background: linear-gradient(135deg, #1e8449 0%, #27ae60 100%);
+    border: none;
+    border-radius: 12px;
+    padding: 12px 28px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    font-family: "ABeeZee", sans-serif;
+    letter-spacing: 0.5px;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    transition: all 0.35s ease;
+}
+
+/* Efeito de brilho animado */
+.btn-cartilhas::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.35),
+        transparent
+    );
+    transform: skewX(-25deg);
+}
+
+/* Brilho deslizando */
+.btn-cartilhas:hover::before {
+    animation: shine-move 1.2s ease-in-out;
+}
+
+/* Efeito hover com leve aumento e mudança de cor */
+.btn-cartilhas:hover {
+    background: linear-gradient(135deg, #2ecc71 0%, #1e8449 100%);
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Efeito ao clicar */
+.btn-cartilhas:active {
+    transform: translateY(0) scale(0.98);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Animação do brilho */
+@keyframes shine-move {
+    0% {
+        left: -75%;
+    }
+    100% {
+        left: 125%;
+    }
+}
+
+.cartilhas-link{
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+    z-index: 1;
+}
+
+.card-logo {
+  width: 60px;
+  height: auto;
+  filter: brightness(1.1);
+}
+
+.card-title-img {
+  width: 80px;
+  height: auto;
+  opacity: 0.9;
+}
+
+
