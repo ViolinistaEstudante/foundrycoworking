@@ -745,19 +745,33 @@ header {
 
 /* ===== SEÇÃO INSTITUCIONAL ===== */
 .institucional {
-  background: linear-gradient(135deg, #e8f6ef, #d1f2eb);
-  padding: 60px 20px;
+  background: linear-gradient(135deg, #e9f7ef, #d4efdf);
+  padding: 70px 20px;
   text-align: center;
   color: #0f2a24;
+  font-family: "ABeeZee", sans-serif;
 }
 
-.institucional h2 {
+.titulo-secao {
   font-size: 2rem;
-  margin-bottom: 40px;
-  color: #1e8449;
   font-weight: 700;
+  color: #1e8449;
+  margin-bottom: 50px;
   text-transform: uppercase;
   letter-spacing: 1px;
+  position: relative;
+}
+
+.titulo-secao::after {
+  content: "";
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #1e8449, #27ae60);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -12px;
+  border-radius: 2px;
 }
 
 .institucional-container {
@@ -773,24 +787,24 @@ header {
   background: linear-gradient(135deg, #1e8449, #27ae60);
   color: #fff;
   border-radius: 14px;
-  padding: 30px 25px;
+  padding: 35px 25px;
   width: 300px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
   transition: all 0.4s ease;
-  position: relative;
   overflow: hidden;
+  position: relative;
 }
 
 .card-institucional::before {
   content: "";
   position: absolute;
-  top: -80%;
-  left: -80%;
-  width: 260%;
-  height: 260%;
-  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.2), transparent 70%);
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.15), transparent 70%);
   opacity: 0;
-  transform: scale(0.5);
+  transform: scale(0.8);
   transition: all 0.6s ease;
 }
 
@@ -800,19 +814,19 @@ header {
 }
 
 .card-institucional:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 20px rgba(39, 174, 96, 0.3);
+  transform: translateY(-10px);
+  box-shadow: 0 10px 22px rgba(39, 174, 96, 0.35);
 }
 
 .card-institucional h3 {
   font-size: 1.4rem;
   margin-bottom: 15px;
-  color: #fefefe;
   text-transform: uppercase;
+  color: #fefefe;
+  letter-spacing: 0.5px;
 }
 
-.card-institucional p,
-.card-institucional ul {
+.card-institucional p {
   font-size: 1rem;
   line-height: 1.6;
 }
@@ -820,17 +834,23 @@ header {
 .card-institucional ul {
   list-style: none;
   padding: 0;
+  margin-top: 10px;
 }
 
 .card-institucional li {
   background: rgba(255, 255, 255, 0.15);
   margin: 8px 0;
-  padding: 6px;
+  padding: 7px 0;
   border-radius: 6px;
   font-weight: 500;
+  transition: all 0.3s ease;
 }
 
-/* Responsivo */
+.card-institucional li:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Responsividade */
 @media (max-width: 768px) {
   .institucional-container {
     flex-direction: column;
@@ -841,9 +861,6 @@ header {
     width: 90%;
   }
 }
-
-
-
 
 
 
