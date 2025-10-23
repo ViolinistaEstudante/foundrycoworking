@@ -862,6 +862,39 @@ header {
   }
 }
 
+/* ============= BOTÃO VOLTAR AO TOPO ============= */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--cor-terciária);
+    color: var(--text-light);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    box-shadow: var(--shadow-md);
+    opacity: 1;
+    visibility: visible;
+    transition: var(--transition);
+    z-index: 99;
+}
+
+.back-to-top:hover {
+    background-color: var(--cor-secundária);
+    transform: translateY(-5px);
+}
+
+.back-to-top i {
+    transition: var(--transition);
+}
+
+.back-to-top:hover i {
+    transform: translateY(-3px);
+}
 
 
 
